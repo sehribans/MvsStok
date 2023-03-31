@@ -1,0 +1,39 @@
+﻿@using MvsStok.Models.Entity;
+@model List<TBLURUN>
+
+
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ürün Id</th>
+            <th>Ürün Ad</th>
+            <th>Ürün Katagori</th>
+            <th>Fiyat</th>
+            <th>Marka</th>
+            <th>Stok</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <td>@urn.URUNID</td>
+                <td>@urn.URUNAD</td>
+                <td>@urn.TBLKATAGORI.KATAGORIAD</td>
+                <td>@urn.FIYAT</td>
+                <td>@urn.MARKA</td>
+                <td>@urn.STOK</td>
+                <td><a href="/URUNLER/sil/@urn.URUNID" class="btn btn-danger">SİL</a> </td>
+                <td><a href="/URUNLER/urunGetir/@urn.URUNID" class="btn btn-success">GUNCELLE</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/URUNLER/urunekle/" class="btn btn-primary">EKLE</a>

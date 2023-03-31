@@ -1,0 +1,19 @@
+﻿@model MvsStok.Models.Entity.TBLKATAGORI
+@{
+    ViewBag.Title = "katagoriekle";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Katagori Adı:</label>
+        @*<input type="text" class="form-control" name="KATAGORIAD"/>*@
+
+        @Html.TextBoxFor(m=>m.KATAGORIAD, new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.KATAGORIAD,"" ,new {@style="color:blue"})
+    </div>
+    <div style="margin-top:5px">
+    <button class="btn btn-info">Ekle</button></div>
+    
+</form>
+

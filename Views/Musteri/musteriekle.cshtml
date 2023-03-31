@@ -1,0 +1,19 @@
+﻿@model MvsStok.Models.Entity.TBLMUSTERI  
+@{
+    ViewBag.Title = "musteriekle";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Müşteri Ad:</label>
+        @Html.TextBoxFor(m=> m.MUSTERIAD,new {@class="form-control"}) 
+        @Html.ValidationMessageFor(m=> m.MUSTERIAD, "",new {@style="color:blue"})
+        <label>Müşteri Soyad:</label>
+        <input type="text" class="form-control" name="MUSTERISOYAD" />
+    </div>
+    <div style="margin-top:5px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+
+</form>

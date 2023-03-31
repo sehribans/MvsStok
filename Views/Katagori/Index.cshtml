@@ -1,0 +1,30 @@
+﻿@using MvsStok.Models.Entity;
+@model List<TBLKATAGORI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Katagori Id</th>
+            <th>Katagori Adı</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <td>@ktgr.KATAGORIID</td>
+                <td>@ktgr.KATAGORIAD</td>
+                <td><a href="/KATAGORI/sil/@ktgr.KATAGORIID" class="btn btn-danger">SİL</a> </td>
+                <td><a href="/KATAGORI/katagoriGetir/@ktgr.KATAGORIID" class="btn btn-success">GUNCELLE</a></td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<a href="/KATAGORI/katagoriekle/" class="btn btn-primary">EKLE</a>

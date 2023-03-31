@@ -1,0 +1,20 @@
+﻿@model MvsStok.Models.Entity.TBLKATAGORI
+@{
+    ViewBag.Title = "katagoriGetir";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<h2>Katagori Güncelleme Sayfası</h2>
+@using (Html.BeginForm("Guncelle", "Katagori", FormMethod.Post))
+{
+                <div class="form-group">
+                    @Html.LabelFor(m => m.KATAGORIID)
+                    @Html.TextBoxFor(m => m.KATAGORIID, new { @class = "form-control" })
+                    <br>
+                    @Html.LabelFor(m => m.KATAGORIAD)
+                    @Html.TextBoxFor(m => m.KATAGORIAD, new { @class = "form-control" })
+                </div>
+               <div>
+                   <button  class="btn-warning">Katagori Güncelle</button>
+               </div>
+}

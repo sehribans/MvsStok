@@ -1,0 +1,30 @@
+﻿@using MvsStok.Models.Entity
+@model  MvsStok.Models.Entity.TBLKATAGORI
+@{
+    ViewBag.Title = "urunekle";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ürün Adı:</label>
+        <input type="text" class="form-control" name="URUNAD" />
+        <label>Ürün Katagori:</label>
+        <select name="URUNKATAGORI">
+            @foreach(TBLKATAGORI i in ViewBag.kategoriler)
+            {
+                <option value="@i.KATAGORIID">@i.KATAGORIAD</option>
+            }
+        </select>
+        <label>Ürün Fiyat:</label>
+        <input type="text" class="form-control" name="FIYAT" />
+        <label>Ürün Marka:</label>
+        <input type="text" class="form-control" name="MARKA" />
+        <label>Ürün Stok:</label>
+        <input type="text" class="form-control" name="STOK" />
+    </div>
+    <div style="margin-top:5px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+
+</form>
